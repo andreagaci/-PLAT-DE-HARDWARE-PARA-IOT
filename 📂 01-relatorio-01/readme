@@ -1,1 +1,42 @@
+# 🎛️ Controle de Entradas Analógicas e Ajuste de Brilho de LED (ESP32)
 
+Este repositório contém o código, a documentação e os detalhes de implementação da prática de **Entradas Analógicas**, desenvolvida no âmbito da disciplina **IMD0904 - Plataformas de Hardware para Internet das Coisas** (IMD/UFRN).
+
+---
+
+## 🎯 Objetivos da Atividade
+
+* **Leitura Analógica (ADC):** Compreender o funcionamento dos conversores analógico-digitais do ESP32 (resolução de 12 bits, `0 - 4095`)[cite: 9, 13].
+* **Controle de Saída Analógica/PWM:** Ajustar a intensidade luminosa de um LED através do mapeamento de sinal analógico para variação de *duty cycle* (PWM)[cite: 9, 14].
+* **Integração de Sensores:** Alternar entre leitura manual (Potenciómetro) e leitura ambiental (Sensor LDR)[cite: 9, 14].
+* **Lógica de Debounce e Temporização:** Implementar a troca de modos via botão físico (com tratamento de *debounce*) e temporização não-bloqueante (`millis()`) para o piscar de um LED secundário[cite: 13, 14].
+
+---
+
+## 🛠️ Componentes Utilizados
+
+| Componente | Função / Descrição | Pino ESP32 |
+| :--- | :--- | :--- |
+| **ESP32 Microcontroller** | Placa principal de processamento | - |
+| **Potenciómetro** | Entrada analógica manual | `GPIO 32`[cite: 12] |
+| **Sensor LDR** | Entrada analógica proporcional à luz ambiente | `GPIO 34`[cite: 12] |
+| **Push-Button** | Botão de alternância de modo (Manual / Automático) | `GPIO 26`[cite: 13] |
+| **LED 1 (Brilho)** | Saída PWM com variação de intensidade | `GPIO 18`[cite: 13, 14] |
+| **LED 2 (Pisca)** | Saída digital com frequência proporcional à entrada | `GPIO 19`[cite: 13, 14] |
+| **Resistores** | Pull-up/down e limitação de corrente para LEDs/LDR | Vários |
+
+---
+
+## ⚙️ Funcionalidades do Sistema
+
+1. **Modo Manual vs. Modo Automático:**
+   * O sistema inicia por padrão no **Modo Manual** (leitura do potenciómetro)[cite: 13, 14].
+   * Ao pressionar o botão em `GPIO 26`, o sistema alterna para o **Modo Automático** (leitura do sensor LDR) e vice-versa[cite: 13, 14].
+2. **Ajuste de Brilho (LED 1):**
+   * O valor lido pelo ADC (`0 - 4095`) é mapeado para o intervalo de PWM (`0 - 255`)[cite: 13, 14].
+   * A intensidade do brilho do LED 1 ajusta-se dinamicamente conforme a rotação do potenciómetro ou a iluminação sobre o LDR[cite: 9, 14].
+3. **Frequência de Intermitência (LED 2):**
+   * O valor analógico é simultaneamente mapeado para um intervalo de tempo (`100ms - 1000ms`)[cite: 14].
+   * O LED 2 pisca a uma frequência diretamente dependente da leitura do sensor em uso[cite: 14].
+
+---

@@ -1,1 +1,49 @@
+🎯 Objetivo do Projeto
+Criar um sistema autônomo baseado no ESP32 que monitora as condições do solo e do ambiente em tempo real, decide a quantidade ideal de irrigação com base na umidade atual e na previsão do tempo, e monitora o volume exato de água utilizado, detectando vazamentos ou entupimentos.
 
+🛠️ Arquitetura de Hardware
+Microcontrolador: ESP32 (devido à conectividade Wi-Fi/Bluetooth nativa e suporte a chamadas HTTP/MQTT).
+
+Sensores:
+
+Sensor Capacitivo de Umidade do Solo (v1.2): Diferencial técnico importante em relação ao sensor resistivo comum, pois o capacitivo não sofre corrosão galvânica em contato com a terra úmida.
+
+Sensor de Fluxo de Água (YF-S201): Instalado na tubulação para medir o volume exato de litros de água aplicados no solo.
+
+Sensor DHT22 / BME280: Para leitura de temperatura e umidade relativa do ar (evaporação do solo).
+
+Atuadores e Interface:
+
+Módulo Relé (5V/12V) + Válvula Solenoide 12V (ou mini bomba d'água): Para controle de abertura do fluxo.
+
+Display OLED 0.96" I2C: Para exibição local dos dados (Modo, Umidade %, Fluxo L/min).
+
+Push-Button: Para acionamento/sobrescrita manual de emergência.
+
+💡 Lógica Inteligente e Diferenciais do Projeto (O que garante nota alta)
+Tomada de Decisão com Previsão do Tempo (API):
+
+Se a umidade do solo estiver abaixo do limite (ex: < 30%), o ESP32 faz uma requisição HTTP para a API do OpenWeatherMap.
+
+Se a probabilidade de chuva para a região nas próximas 3 horas for superior a 70%, o sistema adianta ou cancela a irrigação, economizando água e evitando o encharcamento do solo.
+
+Detecção de Falhas e Vazamentos (Segurança):
+
+Entupimento/Falta d'água: Se o relé da válvula for acionado, mas o sensor de fluxo indicar 0 L/min por mais de 5 segundos, o sistema desliga a saída e envia um alerta de "Sem fluxo / Registro fechado".
+
+Vazamento: Se o relé estiver desligado, mas o sensor de fluxo registrar passagem de água, o sistema dispara um alerta de "Vazamento na rede".
+
+Dashboard IoT e Telemetria (MQTT):
+
+Envio periódico dos dados (Umidade do Solo, Temperatura, Volume Consumido) via protocolo MQTT para plataformas como ThingsBoard, Adafruit IO ou Node-RED.
+
+Permite acompanhar gráficos de umidade ao longo dos dias e acionar a irrigação à distância via celular/web.
+
+🗂️ Sugestão de Módulos para a Apresentação Final
+Hardware/Circuito: Esquema no Fritzing ou Tinkercad detalhando as ligações dos pinos GPIO do ESP32.
+
+Firmware (C++/Arduino IDE): Código estruturado utilizando interrupções para a contagem dos pulsos do sensor de fluxo de água e gerenciamento não-bloqueante (millis()).
+
+Dashboard: Tela interativa mostrando indicadores em tempo real e histórico de consumo de água.
+
+Relatório: Comparativo de economia de água entre uma irrigação temporizada comum e a irrigação inteligente orientada por sensores.

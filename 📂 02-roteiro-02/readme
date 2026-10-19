@@ -1,1 +1,51 @@
+# 🔌 Roteiro 02 - Semicondutores, Diodos e Portas Lógicas
 
+Este repositório contém a resolução do **Roteiro de Laboratório 02** da disciplina de Circuitos Eletrônicos (Instituto Metrópole Digital - IMD). O objetivo principal é estudar o funcionamento de diodos semicondutores sob diferentes condições de polarização, resposta a fontes de tensão alternada (CA) e sua aplicação no projeto de portas lógicas digitais.
+
+---
+
+## 🎯 Objetivos do Roteiro
+* **Diferenciar polarização direta e reversa** em circuitos com diodos.
+* **Analisar o comportamento do diodo com sinal senoidal (CA)** (Conceito de retificação de meia-onda).
+* **Construir e validar portas lógicas** (OR e AND) utilizando diodos semicondutores.
+
+---
+
+## 🧪 Experimento 01: Polarização Direta vs. Reversa de Diodos
+
+Estudo do comportamento do diodo como chave unidirecional de corrente.
+
+### 📋 Atividades e Conceitos:
+1. **Polarização Direta:** 
+   * Montagem do circuito com fonte CC de 5V, diodo, resistor de 1kΩ e LED vermelho.
+   * Observação da condução de corrente (LED aceso).
+   * Cálculo e medição da queda de tensão no resistor de 1kΩ, considerando a barreira de potencial do diodo (0,7V) e a queda de tensão no LED (1,7V).
+2. **Polarização Reversa:** 
+   * Inversão da posição do diodo no circuito.
+   * Verificação do bloqueio da passagem de corrente (LED apagado), atuando como um circuito aberto.
+3. **Análise em Corrente Alternada (Sinal Senoidal 1Hz / 5V pico):**
+   * Análise da condução de corrente apenas durante o semiciclo positivo da onda senoidal (retificação), fazendo o LED piscar a uma frequência de 1 Hz.
+
+---
+
+## 🔣 Experimento 02: Portas Lógicas com Diodos
+
+Aplicação de diodos para criação de circuitos lógicos digitais fundamentais.
+
+### 📋 Atividades e Conceitos:
+1. **Porta Lógica OR (OU):**
+   * Montagem do circuito com dois diodos (D1 e D2) ligados às chaves (SW1 e SW2).
+   * Validação da Tabela Verdade: a saída (LED) fica ativa (nível lógico 1) quando **pelo menos uma** das entradas está ligada em 5V.
+2. **Porta Lógica AND (E):**
+   * Montagem e análise do arranjo de diodos para lógica AND.
+   * Validação da Tabela Verdade: a saída só permanece em nível lógico 1 quando **ambas** as entradas estão em nível lógico 1.
+
+---
+
+## 📁 Arquivos deste Diretório
+* `roteiro_2.pdf`: Guia e enunciados oficiais do Roteiro 02.
+* `Relatorio 02.pdf` / `Roteiro 2 resp 01.pdf`: Documentos com os cálculos, análises teóricas e links das simulações no Falstad.
+* `codigo_relatorio02.ino`: Código/esquema auxiliar em C++/Arduino.
+
+---
+*Atividade desenvolvida para a disciplina de Circuitos Eletrônicos (IMD).*

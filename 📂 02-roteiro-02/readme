@@ -44,8 +44,7 @@ Aplicação de diodos para criação de circuitos lógicos digitais fundamentais
 
 ## 📁 Arquivos deste Diretório
 * `roteiro_2.pdf`: Guia e enunciados oficiais do Roteiro 02.
-* `Relatorio 02.pdf` / `Roteiro 2 resp 01.pdf`: Documentos com os cálculos, análises teóricas e links das simulações no Falstad.
-* `codigo_relatorio02.ino`: Código/esquema auxiliar em C++/Arduino.
+*  'Roteiro 2 resp 01.pdf`: Documentos com os cálculos, análises teóricas e links das simulações no Falstad.
 
 ---
-*Atividade desenvolvida para a disciplina de Circuitos Eletrônicos (IMD).*
+*Atividade desenvolvida para a disciplina de IOT.*

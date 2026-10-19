@@ -1,12 +1,5 @@
 # 🌐 Plataformas de Hardware para Internet das Coisas (IoT)
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Instituição-IMD%20%2F%20UFRN-blue?style=for-the-badge&logo=academic-pages" alt="IMD UFRN">
-  <img src="https://img.shields.io/badge/Hardware-ESP32%20%7C%20Arduino-orange?style=for-the-badge&logo=arduino" alt="Hardware">
-  <img src="https://img.shields.io/badge/Linguagem-C%20%2F%20C%2B%2B-00599C?style=for-the-badge&logo=cplusplus" alt="C/C++">
-  <img src="https://img.shields.io/badge/Simulador-Falstad-green?style=for-the-badge" alt="Falstad">
-</p>
-
 > Repositório dedicado ao armazenamento, documentação e organização de roteiros práticos, relatórios, circuitos e códigos desenvolvidos durante as aulas de **Plataformas de Hardware para Internet das Coisas**.
 
 ---

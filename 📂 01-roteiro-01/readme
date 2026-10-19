@@ -1,1 +1,51 @@
+# ⚡ Roteiro 01 - Introdução à Eletrônica e Simulação de Circuitos
 
+Este repositório contém a resolução do **Roteiro 01** da disciplina de Circuitos Eletrônicos (Instituto Metrópole Digital - IMD). O objetivo principal é revisar conceitos fundamentais de circuitos elétricos e introduzir o uso do simulador Falstad.
+
+## 🎯 Objetivos da Atividade
+*   Aprender a utilizar o **Circuit Simulator Falstad**.
+*   Revisar conceitos básicos de Circuitos Elétricos (Tensão, Corrente, Resistência e Capacitância).
+*   Implementar e analisar circuitos com resistores e capacitores (Circuitos RC).
+
+---
+
+## 🛠️ Exercício 01: Circuito Resistivo em Paralelo
+
+Neste exercício, analisamos um circuito composto por uma fonte de tensão contínua (5V) alimentando dois resistores em paralelo (100Ω e 1kΩ).
+
+### 📋 Atividades Realizadas:
+1.  **Implementação no Falstad:** O circuito foi montado no simulador online.
+2.  **Cálculos Teóricos:**
+    *   Cálculo da tensão no resistor de 1kΩ.
+    *   Cálculo da corrente que passa pelo resistor de 1kΩ, utilizando a Lei de Ohm ($I = V / R$).
+3.  **Medição Simulada:** Utilização de um amperímetro (ligado em série) no simulador para medir a corrente no ramo de 1kΩ.
+4.  **Comparação e Análise:**
+    *   Comparação entre o valor da corrente teórica calculada e a medida no simulador.
+    *   Discussão sobre a diferença entre elementos ideais (simulados) e elementos reais (onde as resistências internas de fios, da fonte e do próprio multímetro poderiam causar pequenas quedas de tensão, alterando a corrente).
+
+---
+
+## ⏳ Experimento 02: Carga e Descarga de Capacitores (Circuito RC)
+
+Este experimento foca na análise do comportamento transitório de um capacitor. O circuito é composto por uma fonte de 3V, um capacitor de 22µF e um resistor de 220kΩ, controlados por uma chave com duas posições (A para carga, B para descarga).
+
+### 📋 Atividades Realizadas:
+1.  **Implementação no Falstad:** Montagem do circuito RC com a chave seletora.
+2.  **Constante de Tempo ($\tau$):** Cálculo teórico da constante de tempo do circuito, dada por $\tau = R \cdot C$.
+3.  **Análise de Carga (Posição A):**
+    *   Simulação do carregamento do capacitor.
+    *   Medição do tempo necessário para a tensão no capacitor sair de 0V e atingir 1,9V (aproximadamente 63,2% da tensão da fonte, o que corresponde ao valor de 1 $\tau$).
+4.  **Discussão Técnica:**
+    *   Verificação se o tempo medido para atingir 1,9V é condizente com a constante de tempo calculada.
+    *   Análise de como a alteração do resistor de 220kΩ para 100kΩ afetaria a velocidade de carga (diminuindo o tempo, pois o fluxo de corrente aumenta).
+5.  **Análise de Descarga (Posição B):**
+    *   Observação do comportamento da tensão do capacitor ao ser desconectado da fonte e conectado diretamente ao resistor. A energia armazenada é dissipada no resistor em forma de calor, fazendo a tensão decair exponencialmente até 0V.
+
+---
+
+## 📁 Arquivos deste Diretório
+*   `Roteiro 01.pdf`: Arquivo original com a descrição das atividades.
+*   `Roteiro 01 Resp.pdf` / `Relatorio 01.pdf`: Documentos contendo as respostas descritivas, cálculos e links para as simulações no Falstad.
+
+---
+*Atividade desenvolvida para a disciplina de Plataforma de Hardware para IOT.*

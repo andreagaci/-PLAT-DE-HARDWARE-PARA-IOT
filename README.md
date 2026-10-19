@@ -8,7 +8,7 @@
 
 * **Disciplina:** Plataformas de Hardware para Internet das Coisas
 * **Instituição:** Instituto Metrópole Digital (IMD) — UFRN
-* **Docente:** Prof. Dr. Luiz de França Afonso Ferreira Filho
+* **Docente:** Prof.Luiz de França Afonso Ferreira Filho
 * **Objetivo Geral:** Estudar a arquitetura de microcontroladores, sensores, atuadores, circuitos eletrônicos básicos, protocolos de comunicação e desenvolvimento de sistemas embarcados voltados para soluções em IoT.
 
 ---
